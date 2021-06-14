@@ -1,3 +1,4 @@
+import { unescapeIdentifier } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -20,6 +21,8 @@ export class LoginComponent implements OnInit {
       this.firebaseService.isLoggedIn = false;
     }
 
+    console.log(localStorage.getItem('user') !== null);
+
   }
 
   async loginUser(email: string, password: string) {
@@ -27,7 +30,7 @@ export class LoginComponent implements OnInit {
 
     if (this.firebaseService.isLoggedIn) {
 
-      console.log(localStorage.user.uid);
+      console.log(localStorage.user);
       this.router.navigateByUrl("/home/main-page");
     } else {
 

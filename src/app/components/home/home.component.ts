@@ -4,6 +4,7 @@ import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 
 @Component({
@@ -32,13 +33,18 @@ export class HomeComponent implements OnInit {
   testFolder = '../../../assets/images/';
 
   constructor(
-    private router: Router
+    private router: Router,
+    public firebaseService: FirebaseService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+
+    console.log(localStorage.getItem('user') !== null);
+
   }
 
   onHomeClick(homeButton: string): void {
+
     this.router.navigateByUrl("/home/main-page");
     this.setActiveButton(homeButton);
   }
@@ -71,6 +77,13 @@ export class HomeComponent implements OnInit {
 
   setActiveButton(buttonName: string): void {
     this.activeButton = buttonName;
+  }
+
+  onLogout(): void {
+    this.firebaseService.logout();
+    this.router.navigateByUrl("/login");
+    // console.log(localStorage.user);
+
   }
   //fs = require('fs');
 
