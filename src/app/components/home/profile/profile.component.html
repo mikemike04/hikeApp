@@ -1,0 +1,39 @@
+<div class="home-container">
+  <div class="home__body">
+
+    <div class="home__body__contentMiddle">
+
+      <div class="home__body__contentMiddle__top">
+        <!--IMAGE CARDS-->
+        <mat-card *ngFor="let i of images" class="image-card">
+          <img alt="bg" class="bg" src="{{ i }}">
+          <mat-card-content>
+            <img alt="avatar" class="avatar"
+              src="https://scontent.fdel8-1.fna.fbcdn.net/v/t1.0-1/cp0/p50x50/15078703_10211571832470683_2854551810050518303_n.jpg?_nc_cat=105&_nc_sid=7206a8&_nc_ohc=YSQBDLYrXHgAX_7KBWW&_nc_ht=scontent.fdel8-1.fna&oh=298837f1c1ebe1f884ce2525d31f39b1&oe=5F6F741A">
+            <span class="card-name">Dinu Alin</span>
+          </mat-card-content>
+        </mat-card>
+
+      </div>
+
+      <div class="home__body__contentMiddle__center">
+
+        <!--Loop Through All Posts From Database and Display-->
+        <mat-card *ngFor="let p of posts" class="posts">
+          <mat-card-header class="posts__header">
+            <img alt="{{ p?.title }}" mat-card-avatar [src]="p?.avatar">
+            <div class="posts__header__right">
+              <span>{{ p?.time?.seconds * 1000 | date:'shortTime' }}</span>
+              <h3>{{ p?.title }}</h3>
+            </div>
+          </mat-card-header>
+          
+          <mat-card-content class="posts__body">
+            <p>{{ p?.message }}</p>
+          </mat-card-content>
+        </mat-card>
+
+
+      </div>  
+
+  </div>

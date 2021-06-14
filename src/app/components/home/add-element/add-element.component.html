@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Add a new hike to your list!</h1>
+
+<div mat-dialog-content>
+
+    <form [formGroup]="hikeForm">
+        <mat-form-field>
+            <input matInput placeholder="Name" formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Start Point" formControlName="start">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="End Point" formControlName="end">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Length" formControlName="length">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Elevation" formControlName="elevation">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Date" formControlName="date">
+        </mat-form-field>
+
+    </form>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button [mat-dialog-close]="hikeForm" [disabled]="hikeForm.invalid" cdkFocusInitial>Ok</button>
+</div>

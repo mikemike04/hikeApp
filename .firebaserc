@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "hike-app-b1390": {
+      "hosting": {
+        "hike-app": [
+          "hike-app-b1390"
+        ]
+      }
+    }
+  }
+}

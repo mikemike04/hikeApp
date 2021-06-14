@@ -1,0 +1,24 @@
+<section class="REGISTER">
+    <div class="header">
+        <h3>Sign Up</h3>
+        <p>It's quick and easy</p>
+    </div>
+
+    <div class="body">
+        <form #form="ngForm">
+            <div class="user_name">
+                <input type="text" placeholder="First Name" name="fname" ngModel>
+                <input type="text" placeholder="Last Name" name="lname" ngModel>
+            </div>
+            <div class="email_password">
+                <input type="text" placeholder="Email" name="email" ngModel>
+                <input type="text" placeholder="Image Url" name="avatar" ngModel>
+                <input type="password" placeholder="Password" name="password" ngModel>
+            </div>
+
+            <p>Agree our Terms.</p>
+
+            <button type="submit" class="submit-button" [mat-dialog-close]="form.value">Sign Up</button>
+        </form>
+    </div>
+</section>

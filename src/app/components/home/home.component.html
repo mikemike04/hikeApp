@@ -1,0 +1,95 @@
+<nav>
+    <div class="logo">
+        <img src="../../../assets/images/logo-small.png" alt="logo" (click)="onLogoClick()">
+    </div>
+    <ul>
+        <li><button [class.active]="isActive('homeButton')" mat-button (click)="onHomeClick('homeButton')">
+                <mat-icon inline=true>home</mat-icon>
+            </button></li>
+        <li><button [class.active]="isActive('travelButton')" mat-button (click)="onTravelClick('travelButton')">
+                <mat-icon inline=true>rowing</mat-icon>
+            </button></li>
+        <li><button [class.active]="isActive('mapButton')" mat-button (click)="onMapClick('mapButton')" #mapBtn>
+                <mat-icon inline=true>map</mat-icon>
+            </button></li>
+        <li><button [class.active]="isActive('notificationButton')" mat-button (click)="onNotificationClick('notificationButton')">
+                <mat-icon inline=true>public</mat-icon>
+            </button></li>
+        <li><button [class.active]="isActive('profileButton')" mat-button (click)="onProfileClick('profileButton')">
+                <mat-icon inline=true>perm_identity</mat-icon>
+            </button></li>
+    </ul>
+</nav>
+<router-outlet></router-outlet>
+
+
+
+<!-- <div class="home-container">
+    <div class="home__header">
+        <div class="home__header__left">
+            <img src="../../../assets/images/logo-small.png" alt="logo">
+            <div class="input">
+                <mat-icon class="search-icon">search_outline</mat-icon>
+                <form>
+                    <input type="text" placeholder="Search Places">
+                </form>
+            </div>
+
+        </div>
+
+
+
+        <div class="home__header__middle">
+              <button class="activate" mat-button>
+                <mat-icon>home</mat-icon>
+              </button>
+              <button mat-button>
+                <mat-icon>rowing</mat-icon>
+              </button>
+              <button mat-button>
+                <mat-icon>map</mat-icon>
+              </button>
+              <button mat-button>
+                <mat-icon>public</mat-icon>
+              </button>
+              <button mat-button>
+                <mat-icon>perm_identity</mat-icon>
+              </button>
+        </div>
+
+
+
+
+        <div class="home__header__right">
+
+            <div class="avatar">
+                <img src="../../../assets/images/avatar.jpg" alt="avatar" mat-card-avatar>
+                <span class="name">My Name</span>
+            </div>
+
+
+            <div class="">
+                <mat-icon>add</mat-icon>
+            </div>
+
+
+            <div class="">
+                <mat-icon matBadge="3" matBadgeColor="warn" matBadgePosition="above after">notifications</mat-icon>
+            </div>
+
+            <mat-icon [matMenuTriggerFor]="menu">expand_more</mat-icon>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>
+                        exit_to_app
+                    </mat-icon>Logout
+                </button>
+            </mat-menu>
+
+        </div>
+
+    </div>
+
+    <router-outlet></router-outlet>
+
+</div> -->

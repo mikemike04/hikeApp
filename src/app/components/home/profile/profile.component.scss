@@ -1,0 +1,125 @@
+@import "../../../../styles.scss";
+
+.home__body {
+    //margin-top: 100px;
+    background-color: $bodycolor;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    //padding-top: 10px;
+    align-items: center;
+  
+    // BODY CONTENT
+  
+    &__contentMiddle {
+      //margin: 10px 10px 10px 10px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      //justify-content: space-around;
+      align-items:center ;
+      justify-content: center;
+  
+    //   &__top {
+    //     display: flex;
+    //     gap: 10px;
+    //     align-items: center;
+    //     flex-wrap: wrap;
+  
+    //     .image-card {
+    //       width: 100px;
+    //       height: 200px;
+    //       border-radius: 20px;
+    //       position: relative;
+    //       z-index: 0;
+  
+  
+    //       &:hover {
+    //         img.bg {
+    //           transform: scale(1.06);
+    //         }
+    //       }
+  
+    //       span {
+    //         font-size: 15px;
+    //         font-family: "Segoe UI Historic", "Segoe UI", Helvetica, Arial, sans-serif;
+    //         line-height: 1.2;
+    //         position: absolute;
+    //         bottom: 10px;
+    //         left: 5px;
+    //         color: white;
+    //         font-weight: 600;
+    //         padding: 5px;
+    //       }
+  
+    //       img.bg {
+    //         max-width: 100%;
+    //         object-fit: cover;
+    //         height: 100%;
+    //         position: absolute;
+    //         top: 0;
+    //         left: 0;
+    //         border-radius: 20px;
+    //         transition: all 0.3s ease;
+    //         cursor: pointer;
+    //       }
+  
+    //       img.avatar {
+    //         width: 40px;
+    //         height: 40px;
+    //         border-radius: 50%;
+    //         color: white;
+    //         z-index: 99;
+    //         position: absolute;
+    //         top: 10px;
+    //         left: 10px;
+    //       }
+  
+    //     }
+    //   }
+  
+    //   &__center {
+    //     padding: 0 10px;
+    //     min-height: 20px;
+    //     width: 100%;
+    //     align-self: center;
+    //     margin-top: 30px;
+    //     display: flex;
+    //     flex-direction: column;
+    //     gap:20px;
+  
+    //     mat-card.posts {
+  
+    //       .posts__header {
+    //         display:flex;
+  
+    //         img {
+  
+    //         }
+  
+    //         .posts__header__right {
+    //           display: flex;
+    //           flex-direction: column-reverse;
+  
+    //           h3 {
+    //             font-weight: 600;
+    //             font-size: 15px;
+    //             text-transform: capitalize;
+    //             margin-bottom: 0;
+    //           }
+    //         }
+  
+  
+    //       }
+  
+    //       .posts__body {
+    //         margin-top: 10px;
+    //       }
+    //     }
+    //   }
+  
+  
+    }
+}

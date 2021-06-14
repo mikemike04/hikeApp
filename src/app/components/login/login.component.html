@@ -1,0 +1,46 @@
+<div class="login-container">
+
+
+    <div class="bear-bg">
+        <img src="../../../assets/images/bear-3d.png" alt="bear3D" class="bear">
+    </div>
+
+    <header class="login__header">
+        <div class="login__header__left">
+            <img src="assets/images/logo.png" alt="logo">
+            <h2>The best view comes after the hardest climb.</h2>
+
+
+        </div>
+        <div class="login__header__right">
+            <mat-card class="login__header__right__card">
+                <mat-card-content class="right__content">
+                    <form #form = "ngForm" class="login-form">
+                        <input type="text" name="email" ngModel placeholder="Email or phone number" required>
+                        <input type="password" name="password" ngModel placeholder="Password" required>
+
+                        <button  mat-flat-button color="primary" type="submit" class="login-button" [disabled]="form.invalid || form.pending">
+                            Sign in
+                        </button>
+                    </form>
+                    <a class="forgot-text" href="#">Forgotten account?</a>
+
+                    <a  href="#" class="create-account" (click)="openRegister()" routerLink="/register">
+                        <span>Create New Account</span>
+                        <div class="liquid"></div>
+                    </a>
+                    
+                </mat-card-content>
+            </mat-card>
+
+            <p class="tagline">
+                <strong>
+                    Do you know places worth visiting?
+                </strong>
+                    Add that piece of heaven and let the world explore it!
+            </p>
+
+        </div>
+    </header>
+</div>
+
