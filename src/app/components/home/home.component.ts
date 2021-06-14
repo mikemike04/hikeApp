@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { FirebaseService } from 'src/app/services/firebase.service';
+
 
 
 @Component({
@@ -32,6 +32,11 @@ export class HomeComponent implements OnInit {
 
   testFolder = '../../../assets/images/';
 
+
+  //fs = require('fs');
+
+  //images: any[] = require().readdir(this.testFolder);
+
   constructor(
     private router: Router,
     public firebaseService: FirebaseService
@@ -53,10 +58,6 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl("/home/trips");
     this.setActiveButton(mapButton);
 
-  }
-
-  onLogoClick(): void {
-    this.router.navigateByUrl("/login");
   }
 
   onTravelClick(travelBtn: string): void {
@@ -85,6 +86,18 @@ export class HomeComponent implements OnInit {
     // console.log(localStorage.user);
 
   }
+
+  @HostListener("document:scroll")
+  scrollFunction() {
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
+      this.isTop = true;
+    }
+    else {
+      this.isTop = false;
+    }
+  }
+
+  isTop = false;
   //fs = require('fs');
 
   //images: any[] = require().readdir(this.testFolder);

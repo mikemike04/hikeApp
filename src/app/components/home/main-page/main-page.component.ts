@@ -19,10 +19,30 @@ export class MainPageComponent implements OnInit {
     '../../../assets/images/Tampa_Brasov.jpg',
   ];
 
+  places = new Map([
+    [this.images[0], 'Everest Mount'],
+    [this.images[1], 'Garboave Forest'],
+    [this.images[2], 'Mount Kilimanjaro'],
+    [this.images[3], 'Mount Rushmore'],
+    [this.images[4], 'Black Forest'],
+    [this.images[5], 'Tampa Brasov']
+  ])
+
+
   posts: any[] = [];
 
+  currentRate: any[] = [
+    3.9,
+    2.45,
+    5,
+    3.9,
+    4.2,
+    4.36
+  ]
 
-  texts:any[] = [
+  messageRating: any = "Rating:"
+
+  texts: any[] = [
     "Discover New Places",
     "Explore The World",
     "Feel The Freedoom",
@@ -30,6 +50,30 @@ export class MainPageComponent implements OnInit {
   ];
 
   constructor() { }
+
+  OnInit() {
+    console.log(this.places.get(this.images[1]));
+  }
+
+  toggleProperty: any[] = [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ];
+
+  toggle(number: number) {
+    this.toggleProperty[number] = !this.toggleProperty[number];
+  }
+
+  setData() {
+    //console.log("Salut!");
+    this.messageRating = "Rated:";
+    console.log(this.messageRating);
+    // Add rate to database
+  }
 
   ngOnInit(): void {
     const target = document.querySelector('.typing');
@@ -39,7 +83,7 @@ export class MainPageComponent implements OnInit {
       deleteSpeed: 80,
       typeColor: '#fff'
     })
-    
+
     writer
       .removeCursor()
       .type(this.texts[0])

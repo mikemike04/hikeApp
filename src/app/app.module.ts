@@ -1,4 +1,3 @@
-import { FlipCardModule } from './flip-card/flip-card.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -36,6 +35,7 @@ import { FirebaseService } from './services/firebase.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { ValidatorService } from './services/validator-service.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -68,7 +68,6 @@ import { ValidatorService } from './services/validator-service.service';
     MatBadgeModule,
     MatListModule,
     MatSidenavModule,
-    FlipCardModule,
     MatTableModule,
     MatSortModule,
     MatFormFieldModule,
@@ -76,6 +75,7 @@ import { ValidatorService } from './services/validator-service.service';
     MatSelectModule,
     MatMenuModule,
     MatFormFieldModule,
+    NgbModule,
 
   ],
   providers: [FirebaseService, ValidatorService],

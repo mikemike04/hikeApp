@@ -1,51 +1,55 @@
-<section class="main-page-container">
+<div class="main-page-container">
+  <section class="header">
     <div class="wrapper">
-        <h1 class="typing"></h1>
+      <h1 class="typing"></h1>
     </div>
-</section>
-<section class="body-text">
-<h2 class="text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-    Pellentesque aliquet feugiat lectus id suscipit. 
-    Pellentesque pretium lectus dui, congue hendrerit tellus tincidunt eu. 
-    Ut ac urna efficitur, fermentum odio eu, sagittis purus. 
-    Praesent est velit, cursus ut blandit eu, sagittis a tellus. 
-    Aliquam volutpat fringilla pellentesque. 
-    Curabitur dapibus porta tincidunt. 
-    Morbi feugiat nisl sed fringilla sollicitudin.
-</h2>
-</section>
+  </section>
+  <section class="body-text">
+    <h2 class="text">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Pellentesque aliquet feugiat lectus id suscipit.
+      Pellentesque pretium lectus dui, congue hendrerit tellus tincidunt eu.
+      Ut ac urna efficitur, fermentum odio eu, sagittis purus.
+      Praesent est velit, cursus ut blandit eu, sagittis a tellus.
+      Aliquam volutpat fringilla pellentesque.
+      Curabitur dapibus porta tincidunt.
+      Morbi feugiat nisl sed fringilla sollicitudin.
+    </h2>
+  </section>
 
-
-
-
-<!-- <div class="home__body__contentMiddle">
-
-    <div class="home__body__contentMiddle__top">
-      <mat-card *ngFor="let i of images" class="image-card">
-        <img alt="bg" class="bg" src="{{ i }}">
-        <mat-card-content>
-          <span class="card-name">Dinu Alin</span>
-        </mat-card-content>
-      </mat-card>
-
-    </div>
-
-    <div class="home__body__contentMiddle__center">
-
-      <mat-card *ngFor="let p of posts" class="posts">
-        <mat-card-header class="posts__header">
-          <img alt="{{ p?.title }}" mat-card-avatar [src]="p?.avatar">
-          <div class="posts__header__right">
-            <span>{{ p?.time?.seconds * 1000 | date:'shortTime' }}</span>
-            <h3>{{ p?.title }}</h3>
+  <section class="cards-container">
+    <div class="container" *ngFor="let i of images; let number = index" [attr.data-index]="number">
+      <div [ngClass]="!toggleProperty[number] ? 'flipped' : ''" class="card">
+        <div class="front" style="
+          background-image:linear-gradient(-225deg, #7de3fc1a 0%, #b9b6e51e 60%), url({{i}});">
+          <div class="arrow-icon" (click)="toggle(number)">
+            <mat-icon>visibility</mat-icon>
           </div>
-        </mat-card-header>
-        
-        <mat-card-content class="posts__body">
-          <p>{{ p?.message }}</p>
-        </mat-card-content>
-      </mat-card>
-
-    </div>  
-</div> -->
+        </div>
+        <div class="back">
+          <div class="rating">
+            <ngb-rating [(rate)]="currentRate[number]" [max]="5">
+              <ng-template let-fill="fill" let-index="star_index">
+                <span class="star" [class.filled]="fill === 100" [class.bad]="0 < 3" (click)="setData()">&#9733;</span>
+              </ng-template>
+            </ngb-rating>
+            <p name="fieldName" ngDefaultControl class="my-rate" [(ngModel)]="messageRating">{{messageRating}}
+              {{currentRate[number]}}</p>
+          </div>
+          <div class="top">
+            <div class="title">
+              {{ places.get(i)}}
+            </div>
+            <div class="card-body-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet feugiat lectus id suscipit.
+              Pellentesque pretium lectus dui, congue hendrerit tellus tincidunt eu.
+            </div>
+          </div>
+          <div class="arrow-icon" (click)="toggle(number)">
+            <mat-icon>visibility_off</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

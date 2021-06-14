@@ -1,6 +1,7 @@
-<nav>
+
+<div>
+<nav [class.nav_change]="isTop">
     <div class="logo">
-        <img src="../../../assets/images/logo-small.png" alt="logo" (click)="onLogoClick()">
     </div>
     <ul>
         <li><button [class.active]="isActive('homeButton')" mat-button (click)="onHomeClick('homeButton')">
@@ -41,6 +42,7 @@
         </li>
     </ul>
 </nav>
+</div>
 <router-outlet></router-outlet>
 
 

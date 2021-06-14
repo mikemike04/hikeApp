@@ -4,335 +4,305 @@ $size: 400px;
 $heigth: 100vh;
 $animation: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);
 
-.login-container{
-    background-image:$animation;
-    height:100vh;
-    width: 100vw;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+.login-container {
+  background-image: $animation;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .login__header {
-    height: 60vh;
-    width: 100%;
-    display: flex;
-    gap:50px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 100px;
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 100px;
 }
 
 .login__header .login__header__left {
+  width: $size;
+  //padding-right: 32px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  //align-items: flex-start
+  text-align: center;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+
+  img {
+    //height: 54px;
+    //margin-right: 32px;
+    width: 30%;
+    height: 30%;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 32px;
     width: $size;
-    //padding-right: 32px;
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
-    //align-items: flex-start
-    text-align: center;
-    flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
-
-    img{
-        //height: 54px;
-        //margin-right: 32px;
-        width: 30%;
-        height: 30%;
-        margin-bottom: 20px;
-    }
-
-    h2{
-        font-weight: normal;
-        font-size: 25px;
-        line-height: 32px;
-        width: $size;
-
-
-    }
+  }
 }
 
-.login__header .login__header__right{
-    
-    z-index: 10;
+.login__header .login__header__right {
+  z-index: 10;
 
-    .login__header__right__card{
+  .login__header__right__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: $size;
+    padding: 10px;
+    border-radius: 10px;
+    //margin-bottom: 30px;
+    background: rgba($color: black, $alpha: 0.2);
+    //margin-top: 30px;
 
+    .right__content {
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100%;
+
+      form {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 380px;
-        width: $size;
-        padding:10px;
-        border-radius: 10px;
-        //margin-bottom: 30px;
-        background: rgba($color: black, $alpha: 0.2);
-        //margin-top: 30px;
+        flex-direction: column;
+        gap: 10px;
+        background-image: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0) 70%);
 
-        .right__content{
-            padding: 5px;
-            display: flex;
-            justify-content: center;
-            //align-items: center;
-            flex-direction: column;
-            height: 100%;
+        .login-button {
+          //background-color: $primary-button-color;
+          padding: 15px;
+          outline: none;
+          border: none;
+          border-radius: 7px;
+          background-color: $primary-button-color;
+          color: white;
+          font-size: 28px;
+          font-weight: 550;
+          margin-bottom: 20px;
+          cursor: pointer;
+        }
 
-            form{
+        .login-button:disabled {
+          background-color: gray;
+        }
 
-              display: flex;
-              flex-direction: column;
-              gap: 10px;
-              background-image: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(0,0,0,0) 70%);
+        .login-form {
+          //padding: 0px;
+          //margin: 0px;
+          display: flex;
+          flex-direction: column;
 
-              .login-button{
-                //background-color: $primary-button-color;
-                padding: 15px;
-                outline: none;
-                border: none;
-                border-radius: 7px;
-                background-color:  $primary-button-color;
-                color: white;
-                font-size: 28px;
-                font-weight:550;
-                margin-bottom: 20px;
-                cursor: pointer;
-            }
+          button {
+            width: 40px;
+            height: 40px;
 
-            .login-button:disabled{
-                background-color: gray;
-            }
-
-             .login-form{
-                //padding: 0px;
-                //margin: 0px;
-                display: flex;
-                flex-direction: column;
-
-              button{
-                width: 40px;
-                height: 40px;
-
-                mat-icon{
-                  font-size: 30px;
-                }
-              }
-
-                .email-label{
-                  //background-color: blueviolet;
-                  //margin: 0px;
-                  //padding: 0px;
-                  font-size: 25px;
-                  color: white;
-                }
-
-                mat-label{
-                  font-size: 20px;
-                }
-
-                .pass-label{
-                  //background-color: blue;
-                  //margin: 0px;
-                  //padding: 0px;
-                  //background-image: radial-gradient(circle, rgba(255,255,255,0.20219425660889356) 0%, rgba(0,0,0,0) 100%); 
-                  font-size: 25px;
-                  color: white;
-                }
-                // .login-form-field{
-
-                //   height: 100%;
-                //   display: flex;
-                //   flex-direction: column;
-                //   gap: 10px;
-
-                //   input{
-                //     padding: 20px;
-                //     width: 100%;
-                //     height: 50px;
-                //     outline: none;
-                //     color: white;
-                //     //background-color: red;
-                //     border:1px solid lightgray;
-                //     border-radius: 5px;
-                //     //background: red;
-                //     font-size: 20px;
-
-                //     ::placeholder {
-                //         //font-size: 16px;
-                //         font-weight: normal;
-                //     }
-                //   }
-                // }
-
+            mat-icon {
+              font-size: 30px;
             }
           }
 
-            a{
-                text-decoration: none;
-                color: $primary-button-color;
-                text-align: center;
-                border-bottom: 1px solid lightgray;
-                margin-bottom: 20px;
-                padding-bottom: 20px;
-                cursor: pointer;
-            }
+          .email-label {
+            //background-color: blueviolet;
+            //margin: 0px;
+            //padding: 0px;
+            font-size: 25px;
+            color: white;
+          }
 
-            // .create-account{
-            //     background-color: $success-button-color;
-            //     display: inline-block;
-            //     align-self: center;
-            //     border-radius: 7px;
-            //     border: none;
-            //     outline: none;
-            //     padding: 10px 30px;
-            //     color: white;
-            //     font-size: 20px;
-            //     font-weight: 550;
-            //     cursor: pointer;
-            //     margin-top: 15px;
-            // }
+          mat-label {
+            font-size: 20px;
+          }
 
-            .create-account {
-                position: relative;
-                padding: 10px 50px;
-                display: inline-block;
-                text-decoration: none;
-                justify-content: center;
-                align-items: center;
-                width: 200px;
-                border: none;
-                outline: none;
-                align-self: center;
-                overflow: hidden;
-                border-radius: 10px;
-                text-align: center;
-              }
-              
-              .create-account span {
-                position: relative;
-                color: #fff;
-                font-size: 18px;
-                z-index: 1;
-              }
-              
-              .create-account .liquid {
-                position: absolute;
-                top: -90px;
-                left: 0;
-                width: 100%;
-                height: 400px;
-                background: $primary-button-color;
-                box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
-                transition: .5s;
-              }
-              
-              .create-account .liquid::after,
-              .create-account .liquid::before {
-                content: '';
-                width: 300%;
-                height: 300%;
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translate(0, 300px);
-                transition: ease 2.5s;
-                background: #000;
-              }
-              
-              .create-account .liquid::before {
-                
-                border-radius: 45%;
-                background: rgba(20, 20, 20, 1);
-                animation: animate 10s linear infinite;
-              }
-              
-              .create-account .liquid::after {
-                
-                border-radius: 40%;
-                background: rgba(20, 20, 20, .5);
-                animation: animate 10s linear infinite;
-              }
+          .pass-label {
+            //background-color: blue;
+            //margin: 0px;
+            //padding: 0px;
+            //background-image: radial-gradient(circle, rgba(255,255,255,0.20219425660889356) 0%, rgba(0,0,0,0) 100%);
+            font-size: 25px;
+            color: white;
+          }
+          // .login-form-field{
 
-              .create-account:hover .liquid{
-                //top: -250px;
-                transform: translate(0, -200px);
-                transition: ease 2s;
-                $animation: linear-gradient(to top, #f43b47 0%, #453a94 100%);
-              }
-              
-              @keyframes animate {
-                0% {
-                  transform: translate(-50%, -80%) rotate(0deg);
-                }
-                100% {
-                  transform: translate(-50%, -80%) rotate(360deg);
-                }
-              }
+          //   height: 100%;
+          //   display: flex;
+          //   flex-direction: column;
+          //   gap: 10px;
 
+          //   input{
+          //     padding: 20px;
+          //     width: 100%;
+          //     height: 50px;
+          //     outline: none;
+          //     color: white;
+          //     //background-color: red;
+          //     border:1px solid lightgray;
+          //     border-radius: 5px;
+          //     //background: red;
+          //     font-size: 20px;
 
-
-
+          //     ::placeholder {
+          //         //font-size: 16px;
+          //         font-weight: normal;
+          //     }
+          //   }
+          // }
         }
-
-    }
-
-      .tagline{
-          text-align: center;
-          width: $size;
-          z-index: 10;
-          font-size: 20px;
-          letter-spacing: 0.7px;
-          z-index: 1;
       }
+
+      a {
+        text-decoration: none;
+        color: $primary-button-color;
+        text-align: center;
+        border-bottom: 1px solid lightgray;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        cursor: pointer;
+      }
+
+      .create-account {
+        margin-bottom: 0%;
+        position: relative;
+        padding: 10px 50px;
+        display: inline-block;
+        text-decoration: none;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        border: none;
+        outline: none;
+        align-self: center;
+        overflow: hidden;
+        border-radius: 10px;
+        text-align: center;
+        text-justify: center;
+      }
+
+      .create-account span {
+        position: relative;
+        color: #fff;
+        font-size: 18px;
+        z-index: 1;
+      }
+
+      .create-account .liquid {
+        position: absolute;
+        top: -90px;
+        left: 0;
+        width: 100%;
+        height: 400px;
+        background: $primary-button-color;
+        box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+        transition: 0.5s;
+      }
+
+      .create-account .liquid::after,
+      .create-account .liquid::before {
+        content: "";
+        width: 300%;
+        height: 300%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(0, 300px);
+        transition: ease 2.5s;
+        background: #000;
+      }
+
+      .create-account .liquid::before {
+        border-radius: 45%;
+        background: rgba(20, 20, 20, 1);
+        animation: animate 10s linear infinite;
+      }
+
+      .create-account .liquid::after {
+        border-radius: 40%;
+        background: rgba(20, 20, 20, 0.5);
+        animation: animate 10s linear infinite;
+      }
+
+      .create-account:hover .liquid {
+        //top: -250px;
+        transform: translate(0, -200px);
+        transition: ease 2s;
+        $animation: linear-gradient(to top, #f43b47 0%, #453a94 100%);
+      }
+
+      @keyframes animate {
+        0% {
+          transform: translate(-50%, -80%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -80%) rotate(360deg);
+        }
+      }
+    }
+  }
+
+  .tagline {
+    text-align: center;
+    width: $size;
+    z-index: 10;
+    font-size: 20px;
+    letter-spacing: 0.7px;
+    z-index: 1;
+  }
 }
 
-
-.bear-bg{
-    display: inline-block;
-    position: absolute;
-    align-self: center;
-    z-index: 0;
-    display: inline-block;
-    
+.bear-bg {
+  display: inline-block;
+  position: absolute;
+  align-self: center;
+  z-index: 0;
+  display: inline-block;
 }
 
-.bear-bg:hover{
+.bear-bg:hover {
   animation: shake 0.8s ease-in infinite;
 }
 
-
 @keyframes shake {
-  0%{
+  0% {
     transform: translate(0);
   }
   20%,
   40%,
   60%,
-  80%{
-    transform: translate(.8rem);
+  80% {
+    transform: translate(0.8rem);
     //box-shadow: 0px 6px 20px rgba(0,0,0,0.5);
   }
   10%,
   30%,
-  50%{
-    transform:translate(-.2em);
+  50% {
+    transform: translate(-0.2em);
   }
   70%,
-  100%{
-    transform:translate(0);
+  100% {
+    transform: translate(0);
   }
 }
 
 @media screen and (max-width: $size) {
-        //align-self: center;
+  //align-self: center;
 }
 
 @media screen and (max-width: 660px) {
-
-    .login-container{
-      width: 1000px;
-    }
-        //align-self: center;
+  .login-container {
+    width: 1000px;
+  }
+  //align-self: center;
 }

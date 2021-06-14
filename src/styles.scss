@@ -1,19 +1,34 @@
+@import "~bootstrap/scss/bootstrap";
 /* You can add global styles to this file, and also import other style files */
 
 //@import url("https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css");
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 $primary-button-color: #1877f2;
-$success-button-color:#42872a;
+$success-button-color: #42872a;
 
-$header-color:white;
+$dark-green: #264653;
+$light-green: #2a9d8f;
+$yellow: #e9c46a;
+$orange: #f4a261;
+$red: #e76f51;
+
+$header-color: white;
 $bodycolor: #f0f2f5;
-
 
 // @media (max-width: 500px) {
 //     body{
 //         background-color:$bodycolor;
 //     }
 // }
+
+/* Importing Bootstrap SCSS file. */

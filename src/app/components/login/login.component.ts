@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
   }
 
   public login(form: NgForm): void {
-
+    
   }
 
   public openRegister(): void {
