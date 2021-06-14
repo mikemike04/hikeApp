@@ -31,6 +31,7 @@
 </div>
 
 <div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">Cancel</button>
-    <button mat-button [mat-dialog-close]="hikeForm" [disabled]="hikeForm.invalid" cdkFocusInitial>Ok</button>
+    <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
+    <button mat-button class="submitButton" [mat-dialog-close]="hikeForm" [disabled]="hikeForm.invalid"
+        cdkFocusInitial>Ok</button>
 </div>

@@ -15,17 +15,40 @@
         <div class="login__header__right">
             <mat-card class="login__header__right__card">
                 <mat-card-content class="right__content">
-                    <form #form="ngForm" class="login-form">
-                        <input type="text" name="email" ngModel placeholder="Email or phone number" required
-                            #emailSignin>
-                        <input type="password" name="password" ngModel placeholder="Password" required #passSigin>
+                    <form [formGroup]="loginForm">
+                        <mat-form-field class="login-form">
+                            <mat-label>Email</mat-label>
+                            <input class="email-label" matInput type="email" placeholder="Ex. dimi@example.com"
+                                name="email" ngModel required formControlName="userEmail" #emailSignin>
+                        </mat-form-field>
 
-                        <button mat-flat-button color="primary" type="submit" class="login-button"
-                            [disabled]="form.invalid || form.pending"
-                            (click)="loginUser(emailSignin.value, passSigin.value)">
+                        <mat-form-field class="login-form">
+                            <mat-label>Password</mat-label>
+                            <input class="pass-label" matInput [type]="hidePass ? 'password' : 'text'" name="password" ngModel required
+                                formControlName="userPass" #passSigin>
+                            <button mat-icon-button matSuffix (click)="hidePass = !hidePass"
+                                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePass">
+                                <mat-icon>{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button> 
+                        </mat-form-field>
+                        <button mat-flat-button color="primary" type="submit" class="login-button" [disabled]="loginForm.invalid"
+                        (click)="loginUser(emailSignin.value, passSigin.value)">
                             Sign in
                         </button>
                     </form>
+                    <!-- <form [formGroup]="loginForm" class="login-form">
+                        <mat-form-field class="login-form-field">
+                            <input matInput type="text" name="email" ngModel placeholder="Email" required
+                                formControlName="userEmail" #emailSignin>
+                            <input matInput type="password" name="password" ngModel placeholder="Password" required
+                                formControlName="userPass" #passSigin>
+
+                            <button mat-flat-button color="primary" type="submit" class="login-button"
+                                (click)="loginUser(emailSignin.value, passSigin.value)">
+                                Sign in
+                            </button>
+                        </mat-form-field>
+                    </form> -->
                     <a class="forgot-text" href="#">Forgotten account?</a>
 
                     <a href="#" class="create-account" (click)="openRegister()" routerLink="/register">

@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
     public firebaseService: FirebaseService
   ) { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
 
     console.log(localStorage.getItem('user') !== null);
 

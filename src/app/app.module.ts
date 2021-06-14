@@ -35,6 +35,7 @@ import { environment } from 'src/environments/environment';
 import { FirebaseService } from './services/firebase.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
+import { ValidatorService } from './services/validator-service.service';
 
 
 @NgModule({
@@ -73,10 +74,11 @@ import { MatSelect, MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatMenuModule
+    MatMenuModule,
+    MatFormFieldModule,
 
   ],
-  providers: [FirebaseService],
+  providers: [FirebaseService, ValidatorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

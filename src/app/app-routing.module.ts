@@ -22,6 +22,7 @@ const routes: Routes = [
     component: HomeComponent,
     canActivate: [ValidUserGuard],
 
+
     children: [
       {
         path: 'profile',

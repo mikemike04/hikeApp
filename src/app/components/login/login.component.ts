@@ -1,8 +1,9 @@
 import { unescapeIdentifier } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FirebaseService } from 'src/app/services/firebase.service';
+import { ValidatorService } from 'src/app/services/validator-service.service';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,14 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 })
 export class LoginComponent implements OnInit {
 
+  loginForm!: FormGroup;
+
+  hidePass = true;
+
   constructor(public firebaseService: FirebaseService,
-    private router: Router) { }
+    private router: Router,
+    private validatorService: ValidatorService,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     if (localStorage.getItem('user') !== null) {
@@ -20,6 +27,31 @@ export class LoginComponent implements OnInit {
     } else {
       this.firebaseService.isLoggedIn = false;
     }
+
+    this.loginForm = this.formBuilder.group(
+      {
+        userEmail: ['', {
+          validators: [
+            Validators.compose([
+              Validators.required,
+              Validators.minLength(6),
+              this.validatorService.emailValidator
+            ])
+          ]
+        }
+        ],
+
+        userPass: ['', {
+
+          validators: [
+            Validators.compose([
+              Validators.required,
+              Validators.minLength(6),
+            ])
+          ]
+        }]
+      }
+    );
 
     console.log(localStorage.getItem('user') !== null);
 
