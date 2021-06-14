@@ -30,6 +30,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AddElementComponent } from './components/home/add-element/add-element.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { FirebaseService } from './services/firebase.service';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { MatSelect, MatSelectModule } from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +49,8 @@ import { AddElementComponent } from './components/home/add-element/add-element.c
     AddElementComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -63,10 +71,12 @@ import { AddElementComponent } from './components/home/add-element/add-element.c
     MatTableModule,
     MatSortModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    MatMenuModule
 
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

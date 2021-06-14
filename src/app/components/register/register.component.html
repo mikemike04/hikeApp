@@ -11,14 +11,15 @@
                 <input type="text" placeholder="Last Name" name="lname" ngModel>
             </div>
             <div class="email_password">
-                <input type="text" placeholder="Email" name="email" ngModel>
+                <input type="text" placeholder="Email" name="email" ngModel #emailSignup>
                 <input type="text" placeholder="Image Url" name="avatar" ngModel>
-                <input type="password" placeholder="Password" name="password" ngModel>
+                <input type="password" placeholder="Password" name="password" ngModel #passSignup>
             </div>
 
             <p>Agree our Terms.</p>
 
-            <button type="submit" class="submit-button" [mat-dialog-close]="form.value">Sign Up</button>
+            <button type="submit" class="submit-button" [mat-dialog-close]="form.value"
+                (click)="onSignup(emailSignup.value, passSignup.value)">Sign Up</button>
         </form>
     </div>
 </section>

@@ -22,7 +22,7 @@
     "@angular/platform-browser": "~11.2.9",
     "@angular/platform-browser-dynamic": "~11.2.9",
     "@angular/router": "~11.2.9",
-    "firebase": "^7.0 || ^8.0",
+    "firebase": "^8.6.7",
     "rxjs": "~6.6.0",
     "t-writer.js": "^1.0.4",
     "tslib": "^2.0.0",

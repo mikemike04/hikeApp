@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-flip-card',
@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FlipCardComponent implements OnInit {
 
-  toggleProperty = false;
+  toggleProperty: string = "Hola!";
+
+  @Output() toggleEvent = new EventEmitter<string>();
 
   constructor() { }
 
@@ -15,7 +17,7 @@ export class FlipCardComponent implements OnInit {
   }
 
   toggle(){
-    this.toggleProperty = !this.toggleProperty;
+    this.toggleEvent.emit(this.toggleProperty);
   }
 
 }

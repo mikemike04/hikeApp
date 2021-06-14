@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-register',
@@ -8,13 +9,23 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  isSignedIn: boolean = false;
+  constructor(public firebaseService: FirebaseService) { }
 
   ngOnInit(): void {
   }
 
-  public login(form: NgForm): void{
-    
+  public login(form: NgForm): void {
+
   }
-  
+
+  async onSignup(email: string, password: string) {
+    await this.firebaseService.signUp(email, password);
+    if (this.firebaseService.isLoggedIn) {
+      this.isSignedIn = true;
+    }
+
+    console.log(this.isSignedIn);
+  }
+
 }

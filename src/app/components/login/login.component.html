@@ -15,21 +15,24 @@
         <div class="login__header__right">
             <mat-card class="login__header__right__card">
                 <mat-card-content class="right__content">
-                    <form #form = "ngForm" class="login-form">
-                        <input type="text" name="email" ngModel placeholder="Email or phone number" required>
-                        <input type="password" name="password" ngModel placeholder="Password" required>
+                    <form #form="ngForm" class="login-form">
+                        <input type="text" name="email" ngModel placeholder="Email or phone number" required
+                            #emailSignin>
+                        <input type="password" name="password" ngModel placeholder="Password" required #passSigin>
 
-                        <button  mat-flat-button color="primary" type="submit" class="login-button" [disabled]="form.invalid || form.pending">
+                        <button mat-flat-button color="primary" type="submit" class="login-button"
+                            [disabled]="form.invalid || form.pending"
+                            (click)="loginUser(emailSignin.value, passSigin.value)">
                             Sign in
                         </button>
                     </form>
                     <a class="forgot-text" href="#">Forgotten account?</a>
 
-                    <a  href="#" class="create-account" (click)="openRegister()" routerLink="/register">
+                    <a href="#" class="create-account" (click)="openRegister()" routerLink="/register">
                         <span>Create New Account</span>
                         <div class="liquid"></div>
                     </a>
-                    
+
                 </mat-card-content>
             </mat-card>
 
@@ -37,10 +40,9 @@
                 <strong>
                     Do you know places worth visiting?
                 </strong>
-                    Add that piece of heaven and let the world explore it!
+                Add that piece of heaven and let the world explore it!
             </p>
 
         </div>
     </header>
 </div>
-

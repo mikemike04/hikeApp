@@ -6,6 +6,13 @@
           "hike-app-b1390"
         ]
       }
+    },
+    "hikeapp-firebase": {
+      "hosting": {
+        "hike-app": [
+          "hikeapp-firebase"
+        ]
+      }
     }
   }
 }
