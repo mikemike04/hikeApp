@@ -1,5 +1,4 @@
 import { MainPageComponent } from './components/home/main-page/main-page.component';
-import { ValidUserGuard } from './guards/valid-user.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
@@ -7,6 +6,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/home/profile/profile.component';
 import { TripsComponent } from './components/home/trips/trips.component';
+import { ValidUserGuard } from './guards/valid-user.guard';
 
 const routes: Routes = [
 
