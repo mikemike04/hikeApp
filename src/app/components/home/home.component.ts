@@ -61,15 +61,15 @@ export class HomeComponent implements OnInit {
   }
 
   onTravelClick(travelBtn: string): void {
-    this.setActiveButton(travelBtn);
+    //this.setActiveButton(travelBtn);
   }
 
   onNotificationClick(notBtn: string): void {
-    this.setActiveButton(notBtn);
+    //this.setActiveButton(notBtn);
   }
 
   onProfileClick(profileBtn: string): void {
-    this.setActiveButton(profileBtn);
+    //this.setActiveButton(profileBtn);
   }
 
   isActive(buttonName: string): boolean {

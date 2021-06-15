@@ -84,6 +84,7 @@ $animation: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);
 
         .login-button {
           //background-color: $primary-button-color;
+          transition: 1s ease-in-out;
           padding: 15px;
           outline: none;
           border: none;
@@ -181,7 +182,7 @@ $animation: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);
         text-decoration: none;
         justify-content: center;
         align-items: center;
-        width: 200px;
+        width: 300px;
         border: none;
         outline: none;
         align-self: center;
@@ -270,8 +271,8 @@ $animation: linear-gradient(-60deg, #16a085 0%, #f4d03f 100%);
   display: inline-block;
 }
 
-.bear-bg:hover {
-  animation: shake 0.8s ease-in infinite;
+.bear-bg-shake {
+  animation: shake 1s ease-in ;
 }
 
 @keyframes shake {

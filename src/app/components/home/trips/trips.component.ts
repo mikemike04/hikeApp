@@ -76,7 +76,7 @@ export class TripsComponent implements OnInit {
 
   openAddDialog() {
     const dialogRef = this.dialog.open(AddElementComponent, {
-      width: '250px',
+      width: '400px'
     });
 
     dialogRef.afterClosed().subscribe(result => {

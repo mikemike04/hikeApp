@@ -1,37 +1,53 @@
-<h1 mat-dialog-title>Add a new hike to your list!</h1>
+<div class="cancel-button">
+    <button mat-mini-fab color="warn" (click)="onNoClick()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<br>
 
-<div mat-dialog-content>
+<div>
+    <h1 mat-dialog-title class="dialog-title">Add a new hike to your list!</h1>
+</div>
 
-    <form [formGroup]="hikeForm">
+<div mat-dialog-content class="form-container">
+
+    <form [formGroup]="hikeForm" class="form">
         <mat-form-field>
-            <input matInput placeholder="Name" formControlName="name">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name must be at least 4 characters long" formControlName="name">
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="Start Point" formControlName="start">
+            <mat-label>Start Point</mat-label>
+            <input matInput placeholder="At least 4 characters" formControlName="start">
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="End Point" formControlName="end">
+            <mat-label>End Point</mat-label>
+            <input matInput placeholder="At least 4 characters" formControlName="end">
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="Length" formControlName="length">
+            <mat-label>Trail Length</mat-label>
+            <input matInput type="number" placeholder="Must be a non negative number" formControlName="length">
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="Elevation" formControlName="elevation">
+            <mat-label>Elevation Gain</mat-label>
+            <input matInput type="number" placeholder="Must be a non negative number < 13000"
+                formControlName="elevation">
         </mat-form-field>
 
         <mat-form-field>
-            <input matInput placeholder="Date" formControlName="date">
+            <mat-label>Date</mat-label>
+            <input matInput type="date" placeholder="Date" formControlName="date">
         </mat-form-field>
 
     </form>
 </div>
 
-<div mat-dialog-actions>
-    <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
-    <button mat-button class="submitButton" [mat-dialog-close]="hikeForm" [disabled]="hikeForm.invalid"
+<div mat-dialog-actions class="submit-button-div">
+
+    <button mat-button class="submit-button" [mat-dialog-close]="hikeForm" [disabled]="hikeForm.invalid"
         cdkFocusInitial>Ok</button>
 </div>

@@ -1,47 +1,44 @@
-
 <div>
-<nav [class.nav_change]="isTop">
-    <div class="logo">
-    </div>
-    <ul>
-        <li><button [class.active]="isActive('homeButton')" mat-button (click)="onHomeClick('homeButton')">
-                <mat-icon inline=true>home</mat-icon>
-            </button></li>
-        <li><button [class.active]="isActive('travelButton')" mat-button (click)="onTravelClick('travelButton')">
-                <mat-icon inline=true>rowing</mat-icon>
-            </button></li>
-        <li><button [class.active]="isActive('mapButton')" mat-button (click)="onMapClick('mapButton')" #mapBtn>
-                <mat-icon inline=true>map</mat-icon>
-            </button></li>
-        <li><button [class.active]="isActive('notificationButton')" mat-button
-                (click)="onNotificationClick('notificationButton')">
-                <mat-icon inline=true>public</mat-icon>
-            </button></li>
-        <!-- <li><button [class.active]="isActive('profileButton')" mat-button (click)="onProfileClick('profileButton')">
-                <mat-icon inline=true>perm_identity</mat-icon>
-            </button></li> -->
-        <li>
-            <button [class.active]="isActive('profileButton')" mat-button (click)="onProfileClick('profileButton')"
-                [matMenuTriggerFor]="beforeMenu">
-                <mat-icon inline=true>perm_identity</mat-icon>
-            </button>
+    <nav [class.nav_change]="isTop">
+        <div class="logo">
+        </div>
+        <ul>
+            <li><button [class.active]="isActive('homeButton')" mat-button (click)="onHomeClick('homeButton')">
+                    <mat-icon inline=true>home</mat-icon>
+                </button></li>
+            <li><button [class.active]="isActive('travelButton')" mat-button (click)="onTravelClick('travelButton')">
+                    <mat-icon inline=true>rowing</mat-icon>
+                </button></li>
+            <li><button [class.active]="isActive('mapButton')" mat-button (click)="onMapClick('mapButton')" #mapBtn>
+                    <mat-icon inline=true>map</mat-icon>
+                </button></li>
+            <li><button [class.active]="isActive('notificationButton')" mat-button
+                    (click)="onNotificationClick('notificationButton')">
+                    <mat-icon inline=true>public</mat-icon>
+                </button></li>
 
-            <mat-menu class="menu-bar" #beforeMenu="matMenu" [overlapTrigger]="false">
-                <button mat-menu-item>
-                    <mat-icon> help</mat-icon>
-                    <span>Help</span>
+            <li>
+                <button [class.active]="isActive('profileButton')" mat-button (click)="onProfileClick('profileButton')"
+                    [matMenuTriggerFor]="beforeMenu">
+                    <mat-icon inline=true>perm_identity</mat-icon>
                 </button>
 
-                <br>
+                <mat-menu class="menu-bar" #beforeMenu="matMenu" [overlapTrigger]="false">
+                    <button mat-menu-item>
+                        <mat-icon> help</mat-icon>
+                        <span>Help</span>
+                    </button>
 
-                <button mat-menu-item (click)="onLogout()">
-                    <mat-icon>logout</mat-icon>
-                    <span>Logout</span>
-                </button>
-            </mat-menu>
-        </li>
-    </ul>
-</nav>
+                    <br>
+
+                    <button mat-menu-item (click)="onLogout()">
+                        <mat-icon>logout</mat-icon>
+                        <span>Logout</span>
+                    </button>
+                </mat-menu>
+            </li>
+        </ul>
+    </nav>
 </div>
 <router-outlet></router-outlet>
 

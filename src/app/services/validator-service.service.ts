@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AbstractControl } from '@angular/forms';
+import { AbstractControl, ValidatorFn } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
@@ -26,4 +26,24 @@ export class ValidatorService {
 
   }
 
+  elevationValidator(min: number, max: number): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: boolean } | null => {
+      if (control.value !== undefined && (isNaN(control.value) || control.value < min || control.value > max)) {
+        return { 'elevationRange': true };
+      }
+      return null;
+    }
+
+  }
+
+  lengthValidator(min: number): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: boolean } | null => {
+      if (control.value !== undefined && (isNaN(control.value) || control.value < min)) {
+        return { 'lengthRange': true };
+      }
+      return null;
+    }
+
+  }
 }
+

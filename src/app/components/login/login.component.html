@@ -1,10 +1,5 @@
 <div class="login-container">
 
-
-    <div class="bear-bg">
-        <img src="../../../assets/images/bear-3d.png" alt="bear3D" class="bear">
-    </div>
-
     <header class="login__header">
         <div class="login__header__left">
             <img src="assets/images/logo.png" alt="logo">
@@ -24,21 +19,21 @@
 
                         <mat-form-field class="login-form">
                             <mat-label>Password</mat-label>
-                            <input class="pass-label" matInput [type]="hidePass ? 'password' : 'text'" name="password" ngModel required
-                                formControlName="userPass" #passSigin>
+                            <input class="pass-label" matInput [type]="hidePass ? 'password' : 'text'" name="password"
+                                ngModel required formControlName="userPass" #passSigin>
                             <button mat-icon-button matSuffix (click)="hidePass = !hidePass"
                                 [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePass">
                                 <mat-icon>{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
-                            </button> 
+                            </button>
                         </mat-form-field>
-                        <button mat-flat-button color="primary" type="submit" class="login-button" [disabled]="loginForm.invalid"
-                        (click)="loginUser(emailSignin.value, passSigin.value)">
+                        <button mat-flat-button color="primary" type="submit" class="login-button"
+                            [disabled]="loginForm.invalid" (click)="loginUser(emailSignin.value, passSigin.value)">
                             Sign in
                         </button>
                     </form>
                     <a class="forgot-text" href="#">Forgotten account?</a>
 
-                    <a class="create-account" (click)="openRegister()" routerLink="/register">
+                    <a class="create-account" (click)="openRegister()">
                         <span>Create New Account</span>
                         <div class="liquid"></div>
                     </a>
@@ -55,4 +50,8 @@
 
         </div>
     </header>
+
+    <div class="bear-bg" [ngClass]="loginForm.invalid ? 'bear-bg-shake' : ''    ">
+        <img src="../../../assets/images/bear-3d.png" alt="bear3D" class="bear">
+    </div>
 </div>

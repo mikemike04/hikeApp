@@ -1,4 +1,4 @@
-<section class="REGISTER">
+<section class="register">
     <div class="header">
         <h3>Sign Up</h3>
         <p>It's quick and easy</p>
@@ -7,19 +7,47 @@
     <div class="body">
         <form #form="ngForm">
             <div class="user_name">
-                <input type="text" placeholder="First Name" name="fname" ngModel>
-                <input type="text" placeholder="Last Name" name="lname" ngModel>
+                <!-- <input type="text" placeholder="First Name" name="fname" ngModel>
+                <input type="text" placeholder="Last Name" name="lname" ngModel> -->
+
+                <mat-form-field appearance="outline">
+                    <mat-label type="text" name="fname">Enter your First Name</mat-label>
+                    <input matInput required>
+                    <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label type="text" name="lname">Enter your Last Name</mat-label>
+                    <input matInput required>
+                    <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                </mat-form-field>
             </div>
             <div class="email_password">
-                <input type="text" placeholder="Email" name="email" ngModel #emailSignup>
+                <!-- <input type="text" placeholder="Email" name="email" ngModel>
                 <input type="text" placeholder="Image Url" name="avatar" ngModel>
-                <input type="password" placeholder="Password" name="password" ngModel #passSignup>
+                <input type="password" placeholder="Password" name="password" ngModel> -->
+                <mat-form-field appearance="outline">
+                    <mat-label type="email" name="email">Enter your Email</mat-label>
+                    <input #mail matInput placeholder="dimi@example.com" required>
+                    <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label type="url" pattern="https?://.+" name="avatar">Enter an image Url for your avatar
+                    </mat-label>
+                    <input matInput required>
+                    <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label type="password" name="password">Enter your password</mat-label>
+                    <input #password matInput required>
+                    <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+                </mat-form-field>
             </div>
 
-            <p>Agree our Terms.</p>
+            <p>Agree to our Terms.</p>
 
-            <button type="submit" class="submit-button" [mat-dialog-close]="form.value"
-                (click)="onSignup(emailSignup.value, passSignup.value)">Sign Up</button>
+            <button type="submit" class="submit-button" [disabled]="password.required || mail.required"
+                [mat-dialog-close]="form.value">Sign Up</button>
         </form>
     </div>
 </section>

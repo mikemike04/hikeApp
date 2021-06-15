@@ -1,3 +1,23 @@
-.submitButton {
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.submit-button-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.submit-button {
     background-color: #32a864;
+    width: 30%;
+    color: whitesmoke;
+    border-radius: 20px;
+}
+
+.dialog-title {
+    text-align: center;
 }
