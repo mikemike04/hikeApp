@@ -1,7 +1,12 @@
 <section class="register">
     <div class="header">
-        <h3>Sign Up</h3>
-        <p>It's quick and easy</p>
+        <div class="header-left">
+            <h3>Sign Up</h3>
+            <p>It's quick and easy</p>
+        </div>
+
+        <mat-icon class="header-right" matTooltip={{tooltipText}} matTooltipClass="tooltip-text"> help</mat-icon>
+
     </div>
 
     <div class="body">
@@ -12,7 +17,7 @@
 
                 <mat-form-field appearance="outline">
                     <mat-label type="text" name="fname">Enter your First Name</mat-label>
-                    <input matInput required formControlName="firstNameControl">
+                    <input matInput #firstNameInput required formControlName="firstNameControl">
                     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
                 </mat-form-field>
 

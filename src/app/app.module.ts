@@ -36,6 +36,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { ValidatorService } from './services/validator-service.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatTooltip, MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -74,6 +75,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatInputModule,
     MatSelectModule,
     NgbModule,
+    MatTooltipModule
 
   ],
   providers: [FirebaseService, ValidatorService],

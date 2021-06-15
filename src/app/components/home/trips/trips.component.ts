@@ -53,7 +53,8 @@ export class TripsComponent implements OnInit {
   }
 
   onRowClick(row: any): void {
-    console.log(row);
+    this.trailSearchValue = (row as Hike).name
+    this.searchTrail();
   }
 
   onDelete(row: any) {

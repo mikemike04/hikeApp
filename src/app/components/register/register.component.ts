@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FirebaseService } from 'src/app/services/firebase.service';
@@ -26,6 +26,8 @@ export class RegisterComponent implements OnInit {
   registerGroup: FormGroup = new FormGroup({});
   matcher = new MyErrorStateMatcher();
 
+  tooltipText: string = "The first and last names should not contain digits \n The password must have at least 6 characters, one upepercase letter and one digit";
+
   constructor(public firebaseService: FirebaseService,
     private router: Router,
     private validatorService: ValidatorService,
@@ -34,6 +36,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
 
     this.initForm();
+
   }
 
   public login(form: NgForm): void {

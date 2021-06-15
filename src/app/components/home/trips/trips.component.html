@@ -1,64 +1,66 @@
-<div>
-    <mat-form-field class="search-form-field">
-        <mat-label>Searh for a trail</mat-label>
-        <input matInput type="text" [(ngModel)]="trailSearchValue">
-        <button mat-button *ngIf="trailSearchValue" matSuffix mat-icon-button aria-label="Clear"
-            (click)="clearSearch()">
-            <mat-icon>close</mat-icon>
-        </button>
-    </mat-form-field>
-
-    <button mat-raised-button (click)="searchTrail()">Search</button>
-</div>
-
-<mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-
-    <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="start">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Start Point </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.start}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="end">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> End Point </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.end}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="length">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Length </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.length}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="elevation">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Elevation gain </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.elevation}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="date">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Date </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.date| date: 'mediumDate'}} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="actions">
-        <mat-header-cell *matHeaderCellDef>Delete entry</mat-header-cell>
-        <mat-cell *matCellDef="let element">
-            <button mat-icon-button color="warn" (click)='onDelete(element)'>
-                <mat-icon>delete_forever</mat-icon>
+<div class="trips-container">
+    <div class="search-div">
+        <mat-form-field class="search-form-field">
+            <mat-label>Searh for a trail</mat-label>
+            <input matInput type="text" [(ngModel)]="trailSearchValue">
+            <button mat-button *ngIf="trailSearchValue" matSuffix mat-icon-button aria-label="Clear"
+                (click)="clearSearch()">
+                <mat-icon>close</mat-icon>
             </button>
-        </mat-cell>
-    </ng-container>
+        </mat-form-field>
+
+        <button mat-raised-button (click)="searchTrail()">Search</button>
+    </div>
+
+    <mat-table class="table" [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="start">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Start Point </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.start}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="end">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> End Point </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.end}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="length">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Length </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.length}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="elevation">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Elevation gain </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.elevation}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Date </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.date| date: 'mediumDate'}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef>Delete entry</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <button mat-icon-button color="warn" (click)='onDelete(element)'>
+                    <mat-icon>delete_forever</mat-icon>
+                </button>
+            </mat-cell>
+        </ng-container>
 
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)='onRowClick(row)'></mat-row>
-</mat-table>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" (click)='onRowClick(row)'></mat-row>
+    </mat-table>
 
-<br>
+    <br>
 
-<button mat-fab color="primary" (click)="openAddDialog()">
-    <mat-icon>add</mat-icon>
-</button>
+    <button mat-fab color="primary" (click)="openAddDialog()">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
