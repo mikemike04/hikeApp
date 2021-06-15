@@ -5,20 +5,20 @@
     </div>
 
     <div class="body">
-        <form #form="ngForm">
+        <form #form="ngForm" [formGroup]="registerGroup">
             <div class="user_name">
                 <!-- <input type="text" placeholder="First Name" name="fname" ngModel>
                 <input type="text" placeholder="Last Name" name="lname" ngModel> -->
 
                 <mat-form-field appearance="outline">
                     <mat-label type="text" name="fname">Enter your First Name</mat-label>
-                    <input matInput required>
+                    <input matInput required formControlName="firstNameControl">
                     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label type="text" name="lname">Enter your Last Name</mat-label>
-                    <input matInput required>
+                    <input matInput required formControlName="lastNameControl">
                     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
                 </mat-form-field>
             </div>
@@ -28,26 +28,34 @@
                 <input type="password" placeholder="Password" name="password" ngModel> -->
                 <mat-form-field appearance="outline">
                     <mat-label type="email" name="email">Enter your Email</mat-label>
-                    <input #mail matInput placeholder="dimi@example.com" required>
+                    <input #mail matInput placeholder="dimi@example.com" required formControlName="emailControl">
                     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label type="url" pattern="https?://.+" name="avatar">Enter an image Url for your avatar
+                    <mat-label type="text" name="password">Enter your password
                     </mat-label>
-                    <input matInput required>
+                    <input matInput type="password" required formControlName="passControl">
+                    <mat-error *ngIf="registerGroup.hasError('required', 'passControl')">
+                        Please enter your newpassword
+                    </mat-error>
+
                     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
                 </mat-form-field>
                 <mat-form-field appearance="outline">
-                    <mat-label type="password" name="password">Enter your password</mat-label>
-                    <input #password matInput required>
+                    <mat-label type="text" name="confirmPassword">Confirm your password</mat-label>
+                    <input #password type="password" matInput required formControlName="confirmPassControl"
+                        [errorStateMatcher]="matcher">
+                    <mat-error *ngIf="registerGroup.hasError('notSame')">
+                        Passwords do not match
+                    </mat-error>
                     <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
                 </mat-form-field>
             </div>
 
             <p>Agree to our Terms.</p>
 
-            <button type="submit" class="submit-button" [disabled]="password.required || mail.required"
-                [mat-dialog-close]="form.value">Sign Up</button>
+            <button type="submit" class="submit-button" [disabled]="registerGroup.invalid"
+                [mat-dialog-close]="form.value" (click)="onSignup(mail.value,password.value)">Sign Up</button>
         </form>
     </div>
 </section>
